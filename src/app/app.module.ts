@@ -3,10 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { SelectorComponent } from './selector/selector.component';
+import { OrganizerComponent } from './organizer/organizer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CalendarComponent,
+    SelectorComponent,
+    OrganizerComponent
   ],
   imports: [
     BrowserModule,
