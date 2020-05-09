@@ -19,7 +19,7 @@
   </main>
 
   <footer>
-      <input type="text" [formControl]="taskInput" required>
+      <input type="text" [formControl]="taskInput" (keyup.enter)="onSubmit()">
       <button class="btn btn-primary btn-block" type="submit" [disabled]="taskInput.invalid" (click)="onSubmit()">Add</button>
   </footer>
 </section>
