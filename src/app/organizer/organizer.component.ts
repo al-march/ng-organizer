@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DateService } from '../shared/date.service';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-organizer',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrganizerComponent implements OnInit {
 
-  constructor() { }
+  taskInput: FormControl = new FormControl('', Validators.required)
+
+  constructor(public dateService: DateService) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+    const {value: title} = this.taskInput;
+    this.taskInput.reset();
   }
 
 }
