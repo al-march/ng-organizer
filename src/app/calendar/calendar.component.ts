@@ -53,14 +53,9 @@ export class CalendarComponent implements OnInit {
     }
     this.calendar = calendar;
     this.someWeek = calendar[0].days;
-
-    console.log(this.calendar);
-    
   }
 
   select(day: moment.Moment) {
     this.dateService.selectDate(day)
-    console.log(this.dateService.date.value);
-    
   }
 }
