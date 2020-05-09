@@ -5,17 +5,20 @@
   </header>
 
   <main>
-    <ul>
+    <ul *ngIf="tasks.length; else emptyTasks">
       <li class="task" *ngFor="let task of tasks; index as i">
         <span>
           <strong class="task__index">{{i + 1}}</strong>
           <i>{{task.title}}</i>
         </span>
-        <button class="btn btn-primary btn-icon">
+        <button class="btn btn-primary btn-icon" (click)="removeTask(task)">
           <i class="material-icons">delete_outline</i>
         </button>
       </li>
     </ul>
+    <ng-template #emptyTasks>
+      <i>No tasks yet...</i>
+    </ng-template>
   </main>
 
   <footer>

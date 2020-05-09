@@ -29,7 +29,7 @@ export class TasksService {
         if (!tasks) {
           return [];
         };
-        
+
         return Object.keys(tasks).map(key => ({ id: key, title: tasks[key].title, date: tasks[key].date }))
       }))
   }
@@ -38,5 +38,10 @@ export class TasksService {
     return this.http
       .post<TaskResponse>(`${TasksService.url}/${task.date}.json`, task)
       .pipe( map(res => ({ ...task, id: res.name })) )
+  }
+
+  remove(task: Task): Observable<void> {
+    return this.http
+      .delete<void>(`${TasksService.url}/${task.date}/${task.id}.json`)
   }
 }
