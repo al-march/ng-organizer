@@ -12,4 +12,8 @@ export class DateService {
     const value = this.date.value.add(dir, 'month');
     this.date.next(value)
   }
+
+  selectDate(day: moment.Moment) {
+    this.date.next(day)
+  }
 }
