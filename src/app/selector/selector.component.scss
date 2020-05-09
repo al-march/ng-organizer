@@ -7,9 +7,17 @@ p {
     margin: 0 2rem;
     text-align: center;
     width: 200px;
+    font-weight: 300;
   }
 
   i {
     cursor: pointer;
+    user-select: none;
+    transition: all ease .4s;
+
+    &:hover {
+      color: var(--primary-color);
+      transform: scale(1.4);
+    }
   }
 }
